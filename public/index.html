@@ -28,7 +28,7 @@
   <style type="text/css">
 
     body {
-      background-color:beige;
+      background-color:#E6E6E6;
       font-size:16pt;
       margin-left: ;
       margin-right: ;
@@ -54,10 +54,16 @@
     }
 
     input.keyshortcut {
-      background-color:beige;
-      color:beige;
+      /*background-color:beige;
+      color:beige;*/
+      background-color:#444444;
+      border-color:#444444;
+      color:white;
       text-decoration:none;
       border:none;
+      width: .75cm;
+      height: .75cm;
+      font-size: 15px;
     }
 
     input.clear {
@@ -97,18 +103,38 @@
     }
 
     input.line {
-      background-color:#cccc99;
-      border-color:#cccc99;
-      font-size:15pt;
+      background-color:white;
+      border-color:#E6E6E6;
+      font-size:20pt;
       font-weight:bold;
-      width:20cm;
+      width:24cm;
       margin: 10px auto 10px auto;
+      height: 40px;
     }
 
     select {
       background-color:#cccccc;
       border-color:#cccccc;
       color:black;
+    }
+
+    div.documentation {
+      width: 24cm;
+      min-height: 10px;
+      overflow: auto;
+      background-color: ;
+      margin-bottom: 50px;
+    }
+
+    div.docInner {
+      width: 12cm;
+      min-height: 50px;
+      float:left;
+      background-color: ;
+    }
+
+    table.tables {
+      padding: 0px;
     }
 
   </style>
@@ -573,113 +599,145 @@
       <td><input type="button" value="=" class="equal" accesskey=e onClick="do_calculation();" title="Enter (Alt-e)"></td>
       </tr></table>
       </td><td valign=top>
-      <p><span style = "font-size: 30px">Display:</span><br>
-      <select name=display class=display onChange="display_result();save_calc();" title="(Alt-d)">
-      <option selected>Decimal (Mixed Notation)
-      <option>Decimal (Scientific Notation)
-      <option>Decimal (Engineering Notation)
-      <option>Hexadecimal
-      <option>Octal
-      <option>Binary
-      </select></p>
-      <p><select name=history class=history onChange="if(this.selectedIndex>0)set_calc(this.options[this.selectedIndex].text);" title="View previous entries (Alt-h)">
-      <option>History:
-      <option><option><option><option><option><option><option><option><option>
-      <option><option><option><option><option><option><option><option><option><option>
-      </select></p>
-      <p><select name=mathConstants class=mathConstants onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
-      <option>Math Constants:
-      <option value="ans ">last result
-      <option value="E ">e
-      <option value="LN10 ">ln(10)
-      <option value="LN2 ">ln(2)
-      <option value="LOG10E ">log10(e)
-      <option value="LOG2E ">log2(e)
-      <option value="PI ">&pi;
-      <option value="SQRT1_2 ">sqrt(1/2)
-      <option value="SQRT2 ">sqrt(2)
-      </select>&nbsp;<small>(<a target="_blank" href="http://ostermiller.org/calc/calcdoc.html#constants">docs</a>)</small></p>
-      <p><select name=mathFunctions class=mathFunctions onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
-      <option>Math Functions:
-      <option value="abs(">abs(x)
-      <option value="acos(">acos(x)
-      <option value="asin(">asin(x)
-      <option value="atan(">atan(x)
-      <option value="atan2(">atan2(x,y)
-      <option value="ceil(">ceil(x)
-      <option value="cos(">cos(x)
-      <option value="exp(">exp(x)
-      <option value="floor(">floor(x)
-      <option value="log(">log(x)
-      <option value="max(">max(x,y)
-      <option value="min(">min(x,y)
-      <option value="pow(">pow(x,y)
-      <option value="random()">random()
-      <option value="round(">round(x)
-      <option value="sin(">sin(x)
-      <option value="sqrt(">sqrt(x)
-      <option value="tan(">tan(x)
-      </select>&nbsp;<small>(<a target="_blank" href="http://ostermiller.org/calc/calcdoc.html#functions">docs</a>)</small></p>
-      <p><input type="button" value="H" accesskey=h class="keyshortcut" onClick="display_nextHistory();">
-      <input type="button" value="D" accesskey=d class="keyshortcut" onClick="next_display_method();">
-      <input type="button" value="M" accesskey=m class="keyshortcut" onClick="display_method(0);">
-      <input type="button" value="S" accesskey=s class="keyshortcut" onClick="display_method(1);">
-      <input type="button" value="G" accesskey=g class="keyshortcut" onClick="display_method(2);">
-      <input type="button" value="B" accesskey=b class="keyshortcut" onClick="display_method(5);">
-      <input type="button" value="O" accesskey=o class="keyshortcut" onClick="display_method(4);">
-      <input type="button" value="X" accesskey=x class="keyshortcut" onClick="display_method(3);">
-      <input type="button" value="A" accesskey=a class="keyshortcut" onClick="append_calc('ans ',0);"></p>
-      </td></tr></table>
+
+      
+      <p>
+        <center>
+          <span style = "font-size: 30px;">
+            Display:
+          </span>
+          <br></br>
+        </center>
+        <select style = "height: 40px; font-size: 20px;" name=display class=display onChange="display_result();save_calc();" title="(Alt-d)">
+          <option selected>Decimal (Mixed Notation)
+          <option>Decimal (Scientific Notation)
+          <option>Decimal (Engineering Notation)
+          <option>Hexadecimal
+          <option>Octal
+          <option>Binary
+        </select>
+      </p>
+
+      <p>
+        <select style = "height: 40px; font-size: 20px;" name=mathConstants class=mathConstants onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
+          <option>Math Constants:
+          <option value="ans ">last result
+          <option value="E ">e
+          <option value="LN10 ">ln(10)
+          <option value="LN2 ">ln(2)
+          <option value="LOG10E ">log10(e)
+          <option value="LOG2E ">log2(e)
+          <option value="PI ">&pi;
+          <option value="SQRT1_2 ">sqrt(1/2)
+          <option value="SQRT2 ">sqrt(2)
+        </select>
+      </p>
+
+      <p>
+        <select style = "height: 40px; font-size: 20px;" name=mathFunctions class=mathFunctions onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
+          <option>Math Functions:
+          <option value="abs(">abs(x)
+          <option value="acos(">acos(x)
+          <option value="asin(">asin(x)
+          <option value="atan(">atan(x)
+          <option value="atan2(">atan2(x,y)
+          <option value="ceil(">ceil(x)
+          <option value="cos(">cos(x)
+          <option value="exp(">exp(x)
+          <option value="floor(">floor(x)
+          <option value="log(">log(x)
+          <option value="max(">max(x,y)
+          <option value="min(">min(x,y)
+          <option value="pow(">pow(x,y)
+          <option value="random()">random()
+          <option value="round(">round(x)
+          <option value="sin(">sin(x)
+          <option value="sqrt(">sqrt(x)
+          <option value="tan(">tan(x)
+        </select>
+      </p>
+
+      <p>
+        <select style = "height: 40px; font-size: 20px;" name=history class=history onChange="if(this.selectedIndex>0)set_calc(this.options[this.selectedIndex].text);" title="View previous entries (Alt-h)">
+          <option>History:
+          <option><option><option><option><option><option><option><option><option>
+          <option><option><option><option><option><option><option><option><option><option>
+        </select>
+      </p>
+
+      <p>
+        <input type="button" value="H" accesskey=h class="keyshortcut" onClick="display_nextHistory();">
+        <input type="button" value="D" accesskey=d class="keyshortcut" onClick="next_display_method();">
+        <input type="button" value="M" accesskey=m class="keyshortcut" onClick="display_method(0);">
+        <input type="button" value="S" accesskey=s class="keyshortcut" onClick="display_method(1);">
+        <input type="button" value="G" accesskey=g class="keyshortcut" onClick="display_method(2);">
+        <input type="button" value="B" accesskey=b class="keyshortcut" onClick="display_method(5);">
+        <input type="button" value="O" accesskey=o class="keyshortcut" onClick="display_method(4);">
+        <input type="button" value="X" accesskey=x class="keyshortcut" onClick="display_method(3);">
+        <input type="button" value="A" accesskey=a class="keyshortcut" onClick="append_calc('ans ',0);">
+      </p>
+
+      </td></tr>
+      </table>
       </form>
-      <div style="height:1in;"></div>
+      
+      </br>
+      <hr style = "color: black; width: 25cm;">
 
-      <h1>Documentation for the Scientific Calculator</h1>
-      <h2><a name="constants"></a>Constants And Symbols</h2>
+      <div class = "documentation">
+        <div class = "docInner">
+          <h2><a name="constants"></a>Constants And Symbols</h2>
 
-      <table border=1>
-        <tr><td align=right>ans</td><td>The last calculated result</td></tr>
-        <tr><td align=right>PI</td><td>pi = 3.14159265...</td></tr>
-        <tr><td align=right>E</td><td>e = 2.71828182...</td></tr>
-        <tr><td align=right>LOG2E</td><td>log of e base 2</td></tr>
-        <tr><td align=right>LOG10E</td><td>log of e base 10</td></tr>
-        <tr><td align=right>LN2</td><td>log of 2 base e</td></tr>
-        <tr><td align=right>LN10</td><td>log of 10 base e</td></tr>
-        <tr><td align=right>SQRT2</td><td>square root of 2</td></tr>
-        <tr><td align=right>SQRT1_2</td><td>square root of 1/2</td></tr>
+          <table border=1 class="tables">
+            <tr><td align=right>ans</td><td>The last calculated result</td></tr>
+            <tr><td align=right>PI</td><td>pi = 3.14159265...</td></tr>
+            <tr><td align=right>E</td><td>e = 2.71828182...</td></tr>
+            <tr><td align=right>LOG2E</td><td>log of e base 2</td></tr>
+            <tr><td align=right>LOG10E</td><td>log of e base 10</td></tr>
+            <tr><td align=right>LN2</td><td>log of 2 base e</td></tr>
+            <tr><td align=right>LN10</td><td>log of 10 base e</td></tr>
+            <tr><td align=right>SQRT2</td><td>square root of 2</td></tr>
+            <tr><td align=right>SQRT1_2</td><td>square root of 1/2</td></tr>
 
-        <tr><td align=right>&</td><td>Bitwise And</td></tr>
-        <tr><td align=right>|</td><td>Bitwise Or</td></tr>
-        <tr><td align=right>^</td><td>Bitwise XOR</td></tr>
-        <tr><td align=right>~</td><td>Bitwise Negation</td></tr>
-        <tr><td align=right><<</td><td>Bitwise Left Shift</td></tr>
-        <tr><td align=right>>></td><td>Bitwise Right Shift</td></tr>
-        <tr><td align=right>%</td><td>Modular Division</td></tr>
-        <tr><td align=right>,</td><td>Common for functions</td></tr>
-        <tr><td align=right>C</td><td>Clear</td></tr>
-      </table>
+            <tr><td align=right>&</td><td>Bitwise And</td></tr>
+            <tr><td align=right>|</td><td>Bitwise Or</td></tr>
+            <tr><td align=right>^</td><td>Bitwise XOR</td></tr>
+            <tr><td align=right>~</td><td>Bitwise Negation</td></tr>
+            <tr><td align=right><<</td><td>Bitwise Left Shift</td></tr>
+            <tr><td align=right>>></td><td>Bitwise Right Shift</td></tr>
+            <tr><td align=right>%</td><td>Modular Division</td></tr>
+            <tr><td align=right>,</td><td>Common For Functions</td></tr>
+            <tr><td align=right>EE</td><td>Scientific Notation Exponent</td></tr>
+            <tr><td align=right>C</td><td>Clear</td></tr>
+          </table>
+        </div>
+        <div class = "docInner">
 
-      <h2><a name="functions"></a>Functions</h2>
+          <h2><a name="functions"></a>Functions</h2>
 
-      <table border=1>
-        <tr><td align=right>abs(a)</td><td>the absolute value of a</td></tr>
-        <tr><td align=right>acos(a)</td><td>arc cosine of a</td></tr>
-        <tr><td align=right>asin(a)</td><td>arc sine of a</td></tr>
-        <tr><td align=right>atan(a)</td><td>arc tangent of a</td></tr>
-        <tr><td align=right>atan2(a,b)</td><td>arc tangent of a/b</td></tr>
-        <tr><td align=right>ceil(a)</td><td>integer closest to a and not less than a</td></tr>
-        <tr><td align=right>cos(a)</td><td>cosine of a</td></tr>
-        <tr><td align=right>exp(a)</td><td>exponent of a</td></tr>
-        <tr><td align=right>floor(a)</td><td>integer closest to and not greater than a</td></tr>
-        <tr><td align=right>log(a)</td><td>log of a base e</td></tr>
-        <tr><td align=right>max(a,b)</td><td>the maximum of a and b</td></tr>
-        <tr><td align=right>min(a,b)</td><td>the minimum of a and b</td></tr>
-        <tr><td align=right>pow(a,b)</td><td>a to the power b</td></tr>
-        <tr><td align=right>random()</td><td>pseudorandom number in the range 0 to 1</td></tr>
-        <tr><td align=right>round(a)</td><td>integer closest to a </td></tr>
-        <tr><td align=right>sin(a)</td><td>sine of a</td></tr>
-        <tr><td align=right>sqrt(a)</td><td>square root of a</td></tr>
-        <tr><td align=right>tan(a)</td><td>tangent of a</td></tr>
-      </table>
+          <table border=1 class="tables">
+            <tr><td align=right>abs(a)</td><td>the absolute value of a</td></tr>
+            <tr><td align=right>acos(a)</td><td>arc cosine of a</td></tr>
+            <tr><td align=right>asin(a)</td><td>arc sine of a</td></tr>
+            <tr><td align=right>atan(a)</td><td>arc tangent of a</td></tr>
+            <tr><td align=right>atan2(a,b)</td><td>arc tangent of a/b</td></tr>
+            <tr><td align=right>ceil(a)</td><td>integer closest to a and not less than a</td></tr>
+            <tr><td align=right>cos(a)</td><td>cosine of a</td></tr>
+            <tr><td align=right>exp(a)</td><td>exponent of a</td></tr>
+            <tr><td align=right>floor(a)</td><td>integer closest to and not greater than a</td></tr>
+            <tr><td align=right>log(a)</td><td>log of a base e</td></tr>
+            <tr><td align=right>max(a,b)</td><td>the maximum of a and b</td></tr>
+            <tr><td align=right>min(a,b)</td><td>the minimum of a and b</td></tr>
+            <tr><td align=right>pow(a,b)</td><td>a to the power b</td></tr>
+            <tr><td align=right>random()</td><td>pseudorandom number in the range 0 to 1</td></tr>
+            <tr><td align=right>round(a)</td><td>integer closest to a </td></tr>
+            <tr><td align=right>sin(a)</td><td>sine of a</td></tr>
+            <tr><td align=right>sqrt(a)</td><td>square root of a</td></tr>
+            <tr><td align=right>tan(a)</td><td>tangent of a</td></tr>
+          </table>
+
+        </div>
+      </div>
 
     </center>
 
