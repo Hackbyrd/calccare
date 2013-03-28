@@ -119,7 +119,7 @@
     }
 
     div.documentation {
-      width: 24cm;
+      width: 25cm;
       min-height: 10px;
       overflow: auto;
       background-color: ;
@@ -127,7 +127,14 @@
     }
 
     div.docInner {
-      width: 12cm;
+      width: 11cm;
+      min-height: 50px;
+      float:left;
+      background-color: ;
+    }
+
+    div.docInner2 {
+      width: 14cm;
       min-height: 50px;
       float:left;
       background-color: ;
@@ -135,6 +142,10 @@
 
     table.tables {
       padding: 0px;
+    }
+
+    td.pad {
+      padding: 2px 10px 2px 10px;
     }
 
   </style>
@@ -559,6 +570,7 @@
     </noscript>
 
     <center>
+      <h1>GoodCalc</h1>
       <form name=calculator onSubmit="do_calculation();return false;">
       <input class=line type=text name="line" onChange="line_change();">
       <br>
@@ -608,7 +620,7 @@
           </span>
           <br></br>
         </center>
-        <select style = "height: 40px; font-size: 20px;" name=display class=display onChange="display_result();save_calc();" title="(Alt-d)">
+        <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=display class=display onChange="display_result();save_calc();" title="(Alt-d)">
           <option selected>Decimal (Mixed Notation)
           <option>Decimal (Scientific Notation)
           <option>Decimal (Engineering Notation)
@@ -619,7 +631,7 @@
       </p>
 
       <p>
-        <select style = "height: 40px; font-size: 20px;" name=mathConstants class=mathConstants onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
+        <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=mathConstants class=mathConstants onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
           <option>Math Constants:
           <option value="ans ">last result
           <option value="E ">e
@@ -634,7 +646,7 @@
       </p>
 
       <p>
-        <select style = "height: 40px; font-size: 20px;" name=mathFunctions class=mathFunctions onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
+        <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=mathFunctions class=mathFunctions onChange="append_calc(this.options[this.selectedIndex].value,0);this.selectedIndex=0;">
           <option>Math Functions:
           <option value="abs(">abs(x)
           <option value="acos(">acos(x)
@@ -658,7 +670,7 @@
       </p>
 
       <p>
-        <select style = "height: 40px; font-size: 20px;" name=history class=history onChange="if(this.selectedIndex>0)set_calc(this.options[this.selectedIndex].text);" title="View previous entries (Alt-h)">
+        <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=history class=history onChange="if(this.selectedIndex>0)set_calc(this.options[this.selectedIndex].text);" title="View previous entries (Alt-h)">
           <option>History:
           <option><option><option><option><option><option><option><option><option>
           <option><option><option><option><option><option><option><option><option><option>
@@ -666,7 +678,7 @@
       </p>
 
       <p>
-        <input type="button" value="H" accesskey=h class="keyshortcut" onClick="display_nextHistory();">
+        <input style = "margin-left: 15px;" type="button" value="H" accesskey=h class="keyshortcut" onClick="display_nextHistory();">
         <input type="button" value="D" accesskey=d class="keyshortcut" onClick="next_display_method();">
         <input type="button" value="M" accesskey=m class="keyshortcut" onClick="display_method(0);">
         <input type="button" value="S" accesskey=s class="keyshortcut" onClick="display_method(1);">
@@ -689,51 +701,51 @@
           <h2><a name="constants"></a>Constants And Symbols</h2>
 
           <table border=1 class="tables">
-            <tr><td align=right>ans</td><td>The last calculated result</td></tr>
-            <tr><td align=right>PI</td><td>pi = 3.14159265...</td></tr>
-            <tr><td align=right>E</td><td>e = 2.71828182...</td></tr>
-            <tr><td align=right>LOG2E</td><td>log of e base 2</td></tr>
-            <tr><td align=right>LOG10E</td><td>log of e base 10</td></tr>
-            <tr><td align=right>LN2</td><td>log of 2 base e</td></tr>
-            <tr><td align=right>LN10</td><td>log of 10 base e</td></tr>
-            <tr><td align=right>SQRT2</td><td>square root of 2</td></tr>
-            <tr><td align=right>SQRT1_2</td><td>square root of 1/2</td></tr>
+            <tr><td class = "pad" align=right>ans</td><td class = "pad">The Last Calculated Result</td></tr>
+            <tr><td class = "pad" align=right>PI</td><td class = "pad">pi = 3.14159265...</td></tr>
+            <tr><td class = "pad" align=right>E</td><td class = "pad">e = 2.71828182...</td></tr>
+            <tr><td class = "pad" align=right>LOG2E</td><td class = "pad">Log of e Base 2</td></tr>
+            <tr><td class = "pad" align=right>LOG10E</td><td class = "pad">Log of e Base 10</td></tr>
+            <tr><td class = "pad" align=right>LN2</td><td class = "pad">Log of 2 Base e</td></tr>
+            <tr><td class = "pad" align=right>LN10</td><td class = "pad">Log of 10 Base e</td></tr>
+            <tr><td class = "pad" align=right>SQRT2</td><td class = "pad">Square Root of 2</td></tr>
+            <tr><td class = "pad" align=right>SQRT1_2</td><td class = "pad">Square Root of 1/2</td></tr>
 
-            <tr><td align=right>&</td><td>Bitwise And</td></tr>
-            <tr><td align=right>|</td><td>Bitwise Or</td></tr>
-            <tr><td align=right>^</td><td>Bitwise XOR</td></tr>
-            <tr><td align=right>~</td><td>Bitwise Negation</td></tr>
-            <tr><td align=right><<</td><td>Bitwise Left Shift</td></tr>
-            <tr><td align=right>>></td><td>Bitwise Right Shift</td></tr>
-            <tr><td align=right>%</td><td>Modular Division</td></tr>
-            <tr><td align=right>,</td><td>Common For Functions</td></tr>
-            <tr><td align=right>EE</td><td>Scientific Notation Exponent</td></tr>
-            <tr><td align=right>C</td><td>Clear</td></tr>
+            <tr><td class = "pad" align=right>&</td><td class = "pad">Bitwise And</td></tr>
+            <tr><td class = "pad" align=right>|</td><td class = "pad">Bitwise Or</td></tr>
+            <tr><td class = "pad" align=right>^</td><td class = "pad">Bitwise XOR</td></tr>
+            <tr><td class = "pad" align=right>~</td><td class = "pad">Bitwise Negation</td></tr>
+            <tr><td class = "pad" align=right><<</td><td class = "pad">Bitwise Left Shift</td></tr>
+            <tr><td class = "pad" align=right>>></td><td class = "pad">Bitwise Right Shift</td></tr>
+            <tr><td class = "pad" align=right>%</td><td class = "pad">Modular Division</td></tr>
+            <tr><td class = "pad" align=right>,</td><td class = "pad">Common For Functions</td></tr>
+            <tr><td class = "pad" align=right>EE</td><td class = "pad">Scientific Notation Exponent</td></tr>
+            <tr><td class = "pad" align=right>C</td><td class = "pad">Clear</td></tr>
           </table>
         </div>
-        <div class = "docInner">
+        <div class = "docInner2">
 
           <h2><a name="functions"></a>Functions</h2>
 
           <table border=1 class="tables">
-            <tr><td align=right>abs(a)</td><td>the absolute value of a</td></tr>
-            <tr><td align=right>acos(a)</td><td>arc cosine of a</td></tr>
-            <tr><td align=right>asin(a)</td><td>arc sine of a</td></tr>
-            <tr><td align=right>atan(a)</td><td>arc tangent of a</td></tr>
-            <tr><td align=right>atan2(a,b)</td><td>arc tangent of a/b</td></tr>
-            <tr><td align=right>ceil(a)</td><td>integer closest to a and not less than a</td></tr>
-            <tr><td align=right>cos(a)</td><td>cosine of a</td></tr>
-            <tr><td align=right>exp(a)</td><td>exponent of a</td></tr>
-            <tr><td align=right>floor(a)</td><td>integer closest to and not greater than a</td></tr>
-            <tr><td align=right>log(a)</td><td>log of a base e</td></tr>
-            <tr><td align=right>max(a,b)</td><td>the maximum of a and b</td></tr>
-            <tr><td align=right>min(a,b)</td><td>the minimum of a and b</td></tr>
-            <tr><td align=right>pow(a,b)</td><td>a to the power b</td></tr>
-            <tr><td align=right>random()</td><td>pseudorandom number in the range 0 to 1</td></tr>
-            <tr><td align=right>round(a)</td><td>integer closest to a </td></tr>
-            <tr><td align=right>sin(a)</td><td>sine of a</td></tr>
-            <tr><td align=right>sqrt(a)</td><td>square root of a</td></tr>
-            <tr><td align=right>tan(a)</td><td>tangent of a</td></tr>
+            <tr><td class = "pad" align=right>abs(a)</td><td class = "pad">The Absolute Value of a</td></tr>
+            <tr><td class = "pad" align=right>acos(a)</td><td class = "pad">Arc Cosine of a</td></tr>
+            <tr><td class = "pad" align=right>asin(a)</td><td class = "pad">Arc Sine of a</td></tr>
+            <tr><td class = "pad" align=right>atan(a)</td><td class = "pad">Arc Tangent of a</td></tr>
+            <tr><td class = "pad" align=right>atan2(a,b)</td><td class = "pad">Arc Tangent of a/b</td></tr>
+            <tr><td class = "pad" align=right>ceil(a)</td><td class = "pad">Integer Closest to a and Not Less Than a</td></tr>
+            <tr><td class = "pad" align=right>cos(a)</td><td class = "pad">Cosine of a</td></tr>
+            <tr><td class = "pad" align=right>exp(a)</td><td class = "pad">Exponent of a</td></tr>
+            <tr><td class = "pad" align=right>floor(a)</td><td class = "pad">Integer Closest to and Not Greater Than a</td></tr>
+            <tr><td class = "pad" align=right>log(a)</td><td class = "pad">Log of a Base e</td></tr>
+            <tr><td class = "pad" align=right>max(a,b)</td><td class = "pad">The Maximum of a and b</td></tr>
+            <tr><td class = "pad" align=right>min(a,b)</td><td class = "pad">The Minimum of a and b</td></tr>
+            <tr><td class = "pad" align=right>pow(a,b)</td><td class = "pad">a to the Power b</td></tr>
+            <tr><td class = "pad" align=right>random()</td><td class = "pad">Pseudorandom Number in the Range 0 to 1</td></tr>
+            <tr><td class = "pad" align=right>round(a)</td><td class = "pad">Integer Closest to a </td></tr>
+            <tr><td class = "pad" align=right>sin(a)</td><td class = "pad">Sine of a</td></tr>
+            <tr><td class = "pad" align=right>sqrt(a)</td><td class = "pad">Square Root of a</td></tr>
+            <tr><td class = "pad" align=right>tan(a)</td><td class = "pad">Tangent of a</td></tr>
           </table>
 
         </div>
