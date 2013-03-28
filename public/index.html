@@ -28,7 +28,12 @@
   <style type="text/css">
 
     body {
-      background-color:#E6E6E6;
+     /* background-image: url("http://www.wallsave.com/wallpapers/1920x1080/sunrise/178454/sunrise-african-trees-natural-178454.jpg");*/
+      /*background-image: url("../images/background.jpg");*/
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      /*background-color:#E6E6E6;*/
+      background-color: lightyellow;
       font-size:16pt;
       margin-left: ;
       margin-right: ;
@@ -146,6 +151,25 @@
 
     td.pad {
       padding: 2px 10px 2px 10px;
+      background-color: lightgray;
+      border-style:solid;
+      border-color:darkgray;
+      border-width: 1px;
+    }
+
+    div.topbanner {
+      width: 500px;
+      min-height: 40px;
+      background-color: ;
+      overflow: auto;
+    }
+
+    div.innerbanner {
+      width: 116px;
+      min-height: 120px;
+      float: left;
+      overflow: auto;
+      padding: 6px 6px 0px 6px;
     }
 
   </style>
@@ -570,7 +594,17 @@
     </noscript>
 
     <center>
-      <h1>GoodCalc</h1>
+
+      <div class = "topbanner">
+        <div class = "innerbanner" style = "text-align: right;"> 
+          <img src="logo.png">
+        </div>
+        <div class = "innerbanner" style = "text-align: left; width: 300px;">
+          <h1><span style = "font-family: Verdana; color: #21AE46;"><i>Good</i></span><span style = "font-family: Verdana; color: #58ACFA;"><i>Calc</i></span></h1>
+        </div>
+      </div>
+
+
       <form name=calculator onSubmit="do_calculation();return false;">
       <input class=line type=text name="line" onChange="line_change();">
       <br>
@@ -615,7 +649,7 @@
       
       <p>
         <center>
-          <span style = "font-size: 30px;">
+          <span style = "font-size: 30px; color: #aa2222">
             Display:
           </span>
           <br></br>
@@ -694,13 +728,13 @@
       </form>
       
       </br>
-      <hr style = "color: black; width: 25cm;">
+      <div style = "height: 2px; background-color: #aa2222; width: 25cm;"></div>
 
       <div class = "documentation">
         <div class = "docInner">
-          <h2><a name="constants"></a>Math Constants & Symbols</h2>
+          <h2 style = "color: #aa2222;"><a name="constants" ></a>Math Constants & Symbols</h2>
 
-          <table border=1 class="tables">
+          <table border=0 class="tables">
             <tr><td class = "pad" align=right>Ans</td><td class = "pad">The Last Calculated Result</td></tr>
             <tr><td class = "pad" align=right>PI</td><td class = "pad">pi = 3.14159265...</td></tr>
             <tr><td class = "pad" align=right>E</td><td class = "pad">e = 2.71828182...</td></tr>
@@ -725,9 +759,9 @@
         </div>
         <div class = "docInner2">
 
-          <h2><a name="functions"></a>Math Functions</h2>
+          <h2 style = "color: #aa2222;"><a name="functions"></a>Math Functions</h2>
 
-          <table border=1 class="tables">
+          <table border=0 class="tables">
             <tr><td class = "pad" align=right>abs(x)</td><td class = "pad">The Absolute Value of x</td></tr>
             <tr><td class = "pad" align=right>acos(x)</td><td class = "pad">Arc Cosine of x</td></tr>
             <tr><td class = "pad" align=right>asin(x)</td><td class = "pad">Arc Sine of x</td></tr>
