@@ -210,7 +210,10 @@
       min-height: 10px;
       width: 100%;
       text-align: center;
+    }
 
+    div.numCalc {
+      margin-left: 15px;
     }
 
   </style>
@@ -224,6 +227,7 @@
     var last_printed=''
     var modifying_history=false;
     var history_index=1;
+    var count = 0;
 
     var regex_HexDigit='(?:[0-9a-fA-F])';
     var regex_Digit='(?:[0-9])';
@@ -299,6 +303,7 @@
       return s;
     }
 
+    //Does calculations for equals, should update database on # of calculations
     function do_calculation(){
       var current_calc=document.calculator.line.value;
       var mod_calc=replace_ans(current_calc);
@@ -332,6 +337,10 @@
         }
         document.calculator.line.focus();
       }
+
+      count = count + 1;
+      $(".numCalc").html("Your Calculation Count: " + count);
+
     }
 
     function line_change(){
@@ -650,7 +659,7 @@
       </div>
 
       <div class = "message">
-        A simple calculation can make a difference in the education of a children living in underprivileged nation. We need your help.</br>
+        A simple calculation can make a difference in the education of children living in underprivileged nation. We need your help.</br>
         For every 5000 calculations that is made, GoodCalc will donate 1 <a href = "http://www8.hp.com/us/en/products/calculators/product-detail.html?oid=3627980">HP Calculator</a> to those in need.
         </br>
         <input type="button" style = "font-size: 20px;" value="Read More" onClick="scrollTo(1450);">
@@ -697,7 +706,6 @@
       </tr></table>
       </td><td valign=top>
 
-      
       <p>
         <center>
           <span style = "font-size: 30px; color: #aa2222">
@@ -773,9 +781,13 @@
         <input type="button" value="X" accesskey=x class="keyshortcut" onClick="display_method(3);">
         <input type="button" value="A" accesskey=a class="keyshortcut" onClick="append_calc('ans ',0);">
       </p>
-
+      <div class = "numCalc">Your Calculation Count: 0</div>
       </td></tr>
+
       </table>
+
+      
+
       </form>
       
       </br>
