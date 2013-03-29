@@ -326,6 +326,7 @@
               display_result();
               add_toHistory(current_calc);
               save_calc();
+              count = count + 1;
             }
           }catch(ex){
             alert('Error type: '+ex.name+'\n'+'Error message: '+ex.message);
@@ -338,7 +339,6 @@
         document.calculator.line.focus();
       }
 
-      count = count + 1;
       $(".numCalc").html("Your Calculation Count: " + count);
 
     }
@@ -659,8 +659,8 @@
       </div>
 
       <div class = "message">
-        A simple calculation can make a difference in the education of children living in underprivileged nation. We need your help.</br>
-        For every 5000 calculations that is made, GoodCalc will donate 1 <a href = "http://www8.hp.com/us/en/products/calculators/product-detail.html?oid=3627980">HP Calculator</a> to those in need.
+        A simple calculation can make a difference in the education of children living in underprivileged nations. We need your help.</br>
+        For every 5000 calculations that are made, GoodCalc will donate 1 <a href = "http://www8.hp.com/us/en/products/calculators/product-detail.html?oid=3627980">HP Calculator</a> to those in need.
         </br>
         <input type="button" style = "font-size: 20px;" value="Read More" onClick="scrollTo(1450);">
       </div>
@@ -798,7 +798,7 @@
           <h2 style = "color: #aa2222;"><a name="constants" ></a>Math Constants & Symbols</h2>
 
           <table border=0 class="tables">
-            <tr><td class = "pad" align=right>Ans</td><td class = "pad">The Last Calculated Result</td></tr>
+            <tr><td class = "pad" align=right>ans</td><td class = "pad">The Last Calculated Result</td></tr>
             <tr><td class = "pad" align=right>PI</td><td class = "pad">pi = 3.14159265...</td></tr>
             <tr><td class = "pad" align=right>E</td><td class = "pad">e = 2.71828182...</td></tr>
             <tr><td class = "pad" align=right>LOG2E</td><td class = "pad">Log of e Base 2</td></tr>
@@ -837,7 +837,7 @@
             <tr><td class = "pad" align=right>log(x)</td><td class = "pad">Log of x Base e</td></tr>
             <tr><td class = "pad" align=right>max(x,y)</td><td class = "pad">The Maximum of x and y</td></tr>
             <tr><td class = "pad" align=right>min(x,y)</td><td class = "pad">The Minimum of x and y</td></tr>
-            <tr><td class = "pad" align=right>pow(x,y)</td><td class = "pad">x to the Power y</td></tr>
+            <tr><td class = "pad" align=right>pow(x,y)</td><td class = "pad">x to the Power of y</td></tr>
             <tr><td class = "pad" align=right>random()</td><td class = "pad">Pseudorandom Number in the Range 0 to 1</td></tr>
             <tr><td class = "pad" align=right>round(x)</td><td class = "pad">Integer Closest to x </td></tr>
             <tr><td class = "pad" align=right>sin(x)</td><td class = "pad">Sine of x</td></tr>
@@ -856,14 +856,14 @@
       <div class = "info">
         <b style = "font-size: 30px; font-weight: bold;">The Situation</b></br>
         <div class = "innerInfo">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education is something that is easily taken for granted. Not everyone is as lucky as others. For example, in Africa, schools and classrooms are rare and the ones that can be found often rest in impoverished areas. The students are grantful for the chance of getting a decent education, however, school supplies are limited and resources are short. A simple device such as a scientific calculator can dramatically change a student's education for the better. This is happening in third world countries on a global scale. They need our help, so let's help them!   
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education is something that is easily taken for granted, but not everyone is fortunate enough to have this luxury. For example, in Africa, schools and classrooms are rare, and the ones that can be found often rest in impoverished areas. Students are grateful for the chance to get a decent education; however, school supplies are limited and resources are short, making  a good education difficult to obtain. This is happening in third world countries on a global scale. A simple device such as a scientific calculator can dramatically improve a student's education.  
         </div>
       </div>
 
       <div class = "info">
         <b style = "font-size: 30px; font-weight: bold;">The Vision</b></br>
         <div class = "innerInfo">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GoodCalc's overall vision is to spread knowledge about the educational barrier due to the lack of school supplies and resources in developing countries all around the world. Additionally, GoodCalc strives to strongly improve the education of those students who are negatively affected by the lack of calculators and computational devices by providing them with those  necessities. With a better education, we hope that each student will significantly improve his or her own life and positively impact the community as a whole. 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GoodCalc's overall vision is to spread awareness about barriers to education due to the lack of school supplies and resources in developing countries all around the world. Additionally, GoodCalc strives to strongly improve the education of those students who are negatively affected by this problem by providing them with our donated calculators. With a better education, we hope that each student will significantly improve his or her own life and positively impact the community as a whole. 
         </div>
       </div>
 
