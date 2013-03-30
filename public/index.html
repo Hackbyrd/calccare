@@ -224,8 +224,8 @@
       text-align: center;
     }
 
-    div.numCalc {
-      margin-left: 15px;
+    div.numCalc, div.numCalcTotal {
+      margin: 0px 0px 5px 15px;
     }
 
   </style>
@@ -675,6 +675,7 @@
         For every 5000 calculations that are made, GoodCalc will donate 1 <a href = "http://www8.hp.com/us/en/products/calculators/product-detail.html?oid=3627980">HP Calculator</a> to those in need.
         </br>
         <input type="button" style = "font-size: 20px;" value="Read More" onClick="scrollTo(1450);">
+
       </div>
 
       <form name=calculator onSubmit="do_calculation();return false;">
@@ -719,12 +720,6 @@
       </td><td valign=top>
 
       <p>
-        <center>
-          <span style = "font-size: 30px; color: #aa2222">
-            Display:
-          </span>
-          <br></br>
-        </center>
         <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=display class=display onChange="display_result();save_calc();" title="(Alt-d)">
           <option selected>Decimal (Mixed Notation)
           <option>Decimal (Scientific Notation)
@@ -775,25 +770,27 @@
       </p>
 
       <p>
-        <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=history class=history onChange="if(this.selectedIndex>0)set_calc(this.options[this.selectedIndex].text);" title="View previous entries (Alt-h)">
-          <option>History:
-          <option><option><option><option><option><option><option><option><option>
-          <option><option><option><option><option><option><option><option><option><option>
-        </select>
-      </p>
-
-      <p>
-        <input style = "margin-left: 15px;" type="button" value="H" accesskey=h class="keyshortcut" onClick="display_nextHistory();">
-        <input type="button" value="D" accesskey=d class="keyshortcut" onClick="next_display_method();">
-        <input type="button" value="M" accesskey=m class="keyshortcut" onClick="display_method(0);">
-        <input type="button" value="S" accesskey=s class="keyshortcut" onClick="display_method(1);">
-        <input type="button" value="G" accesskey=g class="keyshortcut" onClick="display_method(2);">
-        <input type="button" value="B" accesskey=b class="keyshortcut" onClick="display_method(5);">
-        <input type="button" value="O" accesskey=o class="keyshortcut" onClick="display_method(4);">
-        <input type="button" value="X" accesskey=x class="keyshortcut" onClick="display_method(3);">
-        <input type="button" value="A" accesskey=a class="keyshortcut" onClick="append_calc('ans ',0);">
+        <table>
+          <tr>
+            <td>
+              <select style = "height: 40px; font-size: 20px; margin-left: 15px;" name=history class=history onChange="if(this.selectedIndex>0)set_calc(this.options[this.selectedIndex].text);" title="View previous entries (Alt-h)">
+                <option>History:
+                <option><option><option><option><option><option><option><option><option>
+                <option><option><option><option><option><option><option><option><option><option>
+              </select>
+            </td>
+            <td>
+              <input style = "margin-left: 15px;" type="button" value="H" accesskey=h class="keyshortcut" onClick="display_nextHistory();" title="Last History">
+              <input style = "width: 40px" type="button" value="ans" accesskey=a class="keyshortcut" onClick="append_calc('ans ',0);" title="Last Answer">
+            </td>
+          </tr>
+        </table>
       </p>
       <div class = "numCalc">Your Calculation Count: 0</div>
+      <div class = "numCalcTotal">Total Calculation Count: 0</div>
+      <!--Facebook Like
+      <iframe style = "margin-left: 15px;" src="http://www.facebook.com/plugins/like.php?href=http://www.facebook.com/UMCPCSA"scrolling="no" frameborder="0"style="border:none; width:600px; height:80px"></iframe>
+      End Facebook Like-->
       </td></tr>
 
       </table>
