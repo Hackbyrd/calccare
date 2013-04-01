@@ -156,7 +156,7 @@ div.info {
   text-align: left;
   min-height: 50px;
   margin: 20px;
-  border: 1px double black;
+  border: 2px groove gray;
 }
 div.innerInfo{
   width:95.5%;
@@ -164,6 +164,7 @@ div.innerInfo{
   min-height: 40px;
   padding: 20px;
   margin-top: 10px;
+  border: 3px double gray;
 }
 
 a {

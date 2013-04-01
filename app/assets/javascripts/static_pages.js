@@ -1,4 +1,3 @@
-
 var last_result='';
 var saved_result='';
 var last_input='';
@@ -105,6 +104,14 @@ function do_calculation(){
           add_toHistory(current_calc);
           save_calc();
           count = count + 1;
+          $.ajax({
+    			type: "GET",
+    			url: "/update",
+    			dataType: "json",
+    			success: function(msg){
+    				$(".numCalcTotal").html("Total Calculation Count: " + msg.num);
+    			}
+			});
         }
       }catch(ex){
         alert('Error type: '+ex.name+'\n'+'Error message: '+ex.message);
