@@ -1,9 +1,11 @@
 class StaticPagesController < ApplicationController
 	def home
-		@num = Calculation.find(1)
-		if @num == nil
+		@empty = Calculation.find(:all).empty?
+		if @empty == true
 			@num = Calculation.new
 			@num.num = 0
+		else
+			@num = Calculation.find(1)
 		end
 	end
 end
