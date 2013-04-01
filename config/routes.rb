@@ -1,4 +1,9 @@
 Calccare::Application.routes.draw do
+  get "calculation/new"
+
+  root to: 'static_pages#home'
+
+  match '/update',    to: 'calculation#update'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
