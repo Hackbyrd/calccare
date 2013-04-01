@@ -4,7 +4,8 @@ class StaticPagesController < ApplicationController
 		if @empty == true
 			@num = Calculation.new
 			@num.num = 0
-			@num.save!
+			@num.id = 1
+			@num.save
 		else
 			@num = Calculation.find(1)
 		end
