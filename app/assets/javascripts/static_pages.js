@@ -1,7 +1,7 @@
 var last_result='';
 var saved_result='';
 var last_input='';
-var last_printed=''
+var last_printed='';
 var modifying_history=false;
 var history_index=1;
 var count = 0;
@@ -109,7 +109,7 @@ function do_calculation(){
     			url: "/update",
     			dataType: "json",
     			success: function(msg){
-    				$(".numCalcTotal").html("Total Calculation Count: " + msg.num);
+    				$(".numCalcTotal").html(msg.num);
     			}
 			});
         }
@@ -124,7 +124,7 @@ function do_calculation(){
     document.calculator.line.focus();
   }
 
-  $(".numCalc").html("Your Calculation Count: " + count);
+  $(".numCalc").html(count);
 
 }
 
@@ -416,6 +416,71 @@ function display_method(index){
   document.calculator.line.focus();
 }
 
+function displayInstructions() {
+  $(".documentation").html('<div style = "height: 2px; background-color: #aa2222; width: 25cm; margin: 10px auto 10px auto;"></div>' +
+      '<center><button onclick="hideInstructions()">Hide Instructions</button></center>' +
+      '<div class = "docInner">' + 
+      '<center><h3 style = "color: #aa2222;><a name="constants" ></a>Math Constants & Symbols</h3></center>' + 
+      '<table border=0 class="tables">' + 
+        '<tr><td class = "pad" align=right>ans</td><td class = "pad">The Last Calculated Result</td></tr>' + 
+        '<tr><td class = "pad" align=right>PI</td><td class = "pad">pi = 3.14159265...</td></tr>' +
+        '<tr><td class = "pad" align=right>E</td><td class = "pad">e = 2.71828182...</td></tr>' +
+        '<tr><td class = "pad" align=right>LOG2E</td><td class = "pad">Log of e Base 2</td></tr>' +
+        '<tr><td class = "pad" align=right>LOG10E</td><td class = "pad">Log of e Base 10</td></tr>' +
+        '<tr><td class = "pad" align=right>LN2</td><td class = "pad">Log of 2 Base e</td></tr>' +
+        '<tr><td class = "pad" align=right>LN10</td><td class = "pad">Log of 10 Base e</td></tr>' +
+        '<tr><td class = "pad" align=right>SQRT2</td><td class = "pad">Square Root of 2</td></tr>' +
+        '<tr><td class = "pad" align=right>SQRT1_2</td><td class = "pad">Square Root of 1/2</td></tr>' +
+        '<tr><td class = "pad" align=right>&</td><td class = "pad">Bitwise And</td></tr>' +
+        '<tr><td class = "pad" align=right>|</td><td class = "pad">Bitwise Or</td></tr>' +
+        '<tr><td class = "pad" align=right>^</td><td class = "pad">Bitwise XOR</td></tr>' +
+        '<tr><td class = "pad" align=right>~</td><td class = "pad">Bitwise Negation</td></tr>' +
+        '<tr><td class = "pad" align=right><<</td><td class = "pad">Bitwise Left Shift</td></tr>' +
+        '<tr><td class = "pad" align=right>>></td><td class = "pad">Bitwise Right Shift</td></tr>' +
+        '<tr><td class = "pad" align=right>%</td><td class = "pad">Modular Division</td></tr>' +
+        '<tr><td class = "pad" align=right>,</td><td class = "pad">Common For Functions</td></tr>' +
+        '<tr><td class = "pad" align=right>EE</td><td class = "pad">Scientific Notation Exponent</td></tr>' +
+        '<tr><td class = "pad" align=right>C</td><td class = "pad">Clear</td></tr>' +
+      '</table>' +
+    '</div>' +
+    '<div class = "docInner2">' +
+
+      '<center><h3 style = "color: #aa2222;"><a name="functions"></a>Math Functions</h3></center>' +
+
+      '<table border=0 class="tables">' +
+        '<tr><td class = "pad" align=right>abs(x)</td><td class = "pad">The Absolute Value of x</td></tr>' +
+        '<tr><td class = "pad" align=right>acos(x)</td><td class = "pad">Arc Cosine of x</td></tr>' +
+        '<tr><td class = "pad" align=right>asin(x)</td><td class = "pad">Arc Sine of x</td></tr>' +
+        '<tr><td class = "pad" align=right>atan(x)</td><td class = "pad">Arc Tangent of x</td></tr>' +
+        '<tr><td class = "pad" align=right>atan2(x,y)</td><td class = "pad">Arc Tangent of x/y</td></tr>' +
+        '<tr><td class = "pad" align=right>ceil(x)</td><td class = "pad">Integer Closest to x and Not Less Than x</td></tr>' +
+        '<tr><td class = "pad" align=right>cos(x)</td><td class = "pad">Cosine of x</td></tr>' +
+        '<tr><td class = "pad" align=right>exp(x)</td><td class = "pad">Exponent of x</td></tr>' +
+        '<tr><td class = "pad" align=right>floor(x)</td><td class = "pad">Integer Closest to x and Not Greater Than x</td></tr>' +
+        '<tr><td class = "pad" align=right>log(x)</td><td class = "pad">Log of x Base e</td></tr>' +
+        '<tr><td class = "pad" align=right>max(x,y)</td><td class = "pad">The Maximum of x and y</td></tr>' +
+        '<tr><td class = "pad" align=right>min(x,y)</td><td class = "pad">The Minimum of x and y</td></tr>' +
+        '<tr><td class = "pad" align=right>pow(x,y)</td><td class = "pad">x to the Power of y</td></tr>' +
+        '<tr><td class = "pad" align=right>random()</td><td class = "pad">Pseudorandom Number in the Range 0 to 1</td></tr>' +
+        '<tr><td class = "pad" align=right>round(x)</td><td class = "pad">Integer Closest to x </td></tr>' +
+        '<tr><td class = "pad" align=right>sin(x)</td><td class = "pad">Sine of x</td></tr>' +
+        '<tr><td class = "pad" align=right>sqrt(x)</td><td class = "pad">Square Root of x</td></tr>' +
+        '<tr><td class = "pad" align=right>tan(x)</td><td class = "pad">Tangent of x</td></tr>' +
+      '</table>' +
+    '</div>' +
+    '<center><button onclick="hideInstructions()">Hide Instructions</button></center>' +
+    '<div style = "height: 2px; background-color: #aa2222; width: 25cm;margin: 10px auto 10px auto;"></div>');
+}
+
+function hideInstructions() {
+  $(".documentation").html("");
+  scrollTo(0);
+}
+
 function scrollTo(num) {
   $("html, body").animate({scrollTop : num}, "fast");
+}
+
+function hidebut() {
+  $(".how").hide();
 }

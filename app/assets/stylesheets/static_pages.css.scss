@@ -1,16 +1,111 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* text shadow: http://css3gen.com/text-shadow/
+   gradients: http://www.grsites.com/generate/viewresult/4/4000/5000/?result_id=10797999
+   http://ostermiller.org/calc/calculator.html
+ */
+
+* {
+  margin: 0;
+}
+html {
+  height: 100%;
+  font-family: 'arial';
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -61px; /* the bottom margin is the negative value of the footer's height */
+}
+.push {
+  height: 61px; /* .push must be the same height as .footer */
+}
+
+header {
+  width: 1000px;
+  min-height: 125px;
+  overflow: auto;
+  background-image: url("header.png");
+  /*background-color: #D8D8D8;*/
+  text-align: center;
+  margin: 0px auto 10px auto;
+  border: 1px groove #ccc; 
+  border-top: none;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+  /*border-top-left-radius: 10px 5px;*/
+  border-bottom-right-radius: 5px 5px;
+  border-bottom-left-radius: 5px 5px;
+  /*border-top-right-radius: 10px;*/
+}
+
+div.message {
+  width: 515px;
+  padding: 20px 0px 10px 30px;
+  /*color: #58ACFA;*/
+  color: #aa2222;
+  text-align: left;
+  font-size: 20px;
+}
+
+.footer {
+  height: 40px; /* .push must be the same height as .footer */
+  background-image: url("footer.png");
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px groove #ccc;
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+  box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+}
+
 body {
- /* background-image: url("http://www.wallsave.com/wallpapers/1920x1080/sunrise/178454/sunrise-african-trees-natural-178454.jpg");*/
-  /*background-image: url("../images/background.jpg");*/
+  /* background-image: url("http://www.wallsave.com/wallpapers/1920x1080/sunrise/178454/sunrise-african-trees-natural-178454.jpg");*/
+  /*background-image: url("number_background.jpg");*/
   background-attachment: fixed;
   background-size: 100% 100%;
   /*background-color:#E6E6E6;*/
   background-color: lightyellow;
   font-size:16pt;
+  height: 100%;
 }
 
+/* Navigation Bar */
+#nav {
+  width: 970px;
+  margin: 0 auto 5px auto;
+  padding: 0;
+  list-style: none;
+  /*background-color: #f2f2f2;*/
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;  
+  min-height: 10px;
+  overflow: auto; 
+}
+
+#nav li {
+  background-color: #f2f2f2;
+  float: left; 
+  border-top: 1px solid #ccc;
+}
+
+#nav li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #069;
+  border-right: 1px solid #ccc; 
+}
+
+#nav li a:hover {
+  color: #c00;
+  background-color: #fff; 
+}
+
+/* End Navigation Bar */
+
+/* Input Functions */
 input.advanced {
   font-size:15pt;
   width:1.3cm;
@@ -84,8 +179,8 @@ input.line {
   border-color:#E6E6E6;
   font-size:20pt;
   font-weight:bold;
-  width:24cm;
-  margin: 10px auto 10px auto;
+  width:950px;
+  margin: 10px auto 0px auto;
   height: 40px;
 }
 
@@ -97,9 +192,10 @@ select {
 
 div.documentation {
   width: 25cm;
-  min-height: 10px;
+  min-height: 1px;
   overflow: auto;
-  margin-bottom: 10px;
+  margin: 10px auto;
+  padding: 10px 0px;
 }
 
 div.docInner {
@@ -126,38 +222,25 @@ td.pad {
   border-width: 1px;
 }
 
-div.topbanner {
-  width: 500px;
-  min-height: 40px;
-  overflow: auto;
-}
+/* End Input Functions */
 
-div.innerbanner {
-  width: 116px;
-  min-height: 120px;
-  float: left;
-  overflow: auto;
-  padding: 6px 6px 0px 6px;
-}
-
-div.message {
-  min-height: 10px;
-  width: 100%;
-  border-top: 1px solid #58ACFA;
-  border-bottom: 1px solid #58ACFA;
-  padding: 10px;
-  color: black;
-}
+/* About Us */
 
 div.info {
-  width: 24cm;
+  width: 960px;
   padding: 20px;
   background-color: white;
   text-align: left;
   min-height: 50px;
-  margin: 20px;
-  border: 2px groove gray;
+  margin: 20px auto 20px auto;
+  border: 1px groove #ccc;
+  border-top-left-radius: 3px 3px;
+  border-bottom-right-radius: 3px 3px;
+  border-bottom-left-radius: 3px 3px;
+  border-top-right-radius: 3px 3px;
+  font-family: "Book Antiqua";
 }
+
 div.innerInfo{
   width:95.5%;
   background-color: lightgray;
@@ -165,6 +248,10 @@ div.innerInfo{
   padding: 20px;
   margin-top: 10px;
   border: 3px double gray;
+}
+
+hr {
+  margin: 10px 0px;
 }
 
 a {
@@ -175,12 +262,53 @@ a:hover {
   text-decoration: underline;
 }
 
+.tdPad {
+  padding: 5px 0px;
+}
+
 div.submitted {
   min-height: 10px;
   width: 100%;
   text-align: center;
 }
 
+/* Calculation Total */
 div.numCalc, div.numCalcTotal {
-  margin: 0px 0px 5px 15px;
+  margin: 5px 0px 5px 10px;
+  font-weight: bold;
+}
+
+/* Calculator */
+div.calcContainer {
+  text-align: center;
+  margin: 0px auto 10px auto;
+  /*background-color: blue;*/
+  min-height: 100px;
+  overflow: auto;
+}
+
+div.calcContent {
+  text-align: center;
+  /*background-color: red;*/
+  min-height: 100px;
+  width: 1000px;
+  margin: 0px auto;
+  overflow: auto;
+}
+
+div.calc {
+  text-align: left;
+  /*background-color: green;*/
+  min-height: 100px;
+  float: left;
+  width: 390px;
+  margin-top: 10px;
+}
+
+div.ad {
+  margin-top: 10px;
+  /*background-color: pink;*/
+  min-height: 300px;
+  float: left;
+  width: 110px;
 }

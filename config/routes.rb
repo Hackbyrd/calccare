@@ -3,7 +3,11 @@ Calccare::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match '/update',    to: 'calculation#update'
+  #match '/update',    to: 'calculation#update'
+  match '/about',     to: 'static_pages#about'
+  match '/join',     to: 'static_pages#join'
+  match '/contact',     to: 'static_pages#contact'
+  match '/partners',     to: 'static_pages#partners'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

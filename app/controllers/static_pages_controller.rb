@@ -10,4 +10,12 @@ class StaticPagesController < ApplicationController
 			@num = Calculation.find(1)
 		end
 	end
+	def about
+	end
+	def join
+	end
+	def partners
+	end
+	def contact
+	end
 end
