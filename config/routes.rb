@@ -8,6 +8,7 @@ Calccare::Application.routes.draw do
   match '/join',     to: 'static_pages#join'
   match '/contact',     to: 'static_pages#contact'
   match '/partners',     to: 'static_pages#partners'
+    match '/donate',     to: 'static_pages#donate'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

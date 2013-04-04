@@ -18,4 +18,6 @@ class StaticPagesController < ApplicationController
 	end
 	def contact
 	end
+	def donate
+	end
 end
