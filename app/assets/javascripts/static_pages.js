@@ -420,56 +420,90 @@ function displayInstructions() {
   $(".documentation").html('<div style = "height: 2px; background-color: #aa2222; width: 25cm; margin: 10px auto 10px auto;"></div>' +
       '<center><button onclick="hideInstructions()">Hide Instructions</button></center>' +
       '<div class = "docInner">' + 
-      '<center><h3 style = "color: #aa2222";><a name="constants" ></a>Math Constants & Symbols</h3></center>' + 
-      '<table border=0 class="tables">' + 
-        '<tr><td class = "pad" align=right>ans</td><td class = "pad">The Last Calculated Result</td></tr>' + 
-        '<tr><td class = "pad" align=right>PI</td><td class = "pad">pi = 3.14159265...</td></tr>' +
-        '<tr><td class = "pad" align=right>E</td><td class = "pad">e = 2.71828182...</td></tr>' +
-        '<tr><td class = "pad" align=right>LOG2E</td><td class = "pad">Log of e Base 2</td></tr>' +
-        '<tr><td class = "pad" align=right>LOG10E</td><td class = "pad">Log of e Base 10</td></tr>' +
-        '<tr><td class = "pad" align=right>LN2</td><td class = "pad">Log of 2 Base e</td></tr>' +
-        '<tr><td class = "pad" align=right>LN10</td><td class = "pad">Log of 10 Base e</td></tr>' +
-        '<tr><td class = "pad" align=right>SQRT2</td><td class = "pad">Square Root of 2</td></tr>' +
-        '<tr><td class = "pad" align=right>SQRT1_2</td><td class = "pad">Square Root of 1/2</td></tr>' +
-        '<tr><td class = "pad" align=right>&</td><td class = "pad">Bitwise And</td></tr>' +
-        '<tr><td class = "pad" align=right>|</td><td class = "pad">Bitwise Or</td></tr>' +
-        '<tr><td class = "pad" align=right>^</td><td class = "pad">Bitwise XOR</td></tr>' +
-        '<tr><td class = "pad" align=right>~</td><td class = "pad">Bitwise Negation</td></tr>' +
-        '<tr><td class = "pad" align=right><<</td><td class = "pad">Bitwise Left Shift</td></tr>' +
-        '<tr><td class = "pad" align=right>>></td><td class = "pad">Bitwise Right Shift</td></tr>' +
-        '<tr><td class = "pad" align=right>%</td><td class = "pad">Modular Division</td></tr>' +
-        '<tr><td class = "pad" align=right>,</td><td class = "pad">Common For Functions</td></tr>' +
-        '<tr><td class = "pad" align=right>EE</td><td class = "pad">Scientific Notation Exponent</td></tr>' +
-        '<tr><td class = "pad" align=right>C</td><td class = "pad">Clear</td></tr>' +
-      '</table>' +
-    '</div>' +
-    '<div class = "docInner2">' +
+        '<center><h3 style = "color: #aa2222";><a name="constants" ></a>Math Constants & Symbols</h3></center>' + 
+        '<table border=0 class="tables">' + 
+          '<tr><td class = "pad" align=right>ans</td><td class = "pad">The Last Calculated Result</td></tr>' + 
+          '<tr><td class = "pad" align=right>PI</td><td class = "pad">pi = 3.14159265...</td></tr>' +
+          '<tr><td class = "pad" align=right>E</td><td class = "pad">e = 2.71828182...</td></tr>' +
+          '<tr><td class = "pad" align=right>LOG2E</td><td class = "pad">Log of e Base 2</td></tr>' +
+          '<tr><td class = "pad" align=right>LOG10E</td><td class = "pad">Log of e Base 10</td></tr>' +
+          '<tr><td class = "pad" align=right>LN2</td><td class = "pad">Log of 2 Base e</td></tr>' +
+          '<tr><td class = "pad" align=right>LN10</td><td class = "pad">Log of 10 Base e</td></tr>' +
+          '<tr><td class = "pad" align=right>SQRT2</td><td class = "pad">Square Root of 2</td></tr>' +
+          '<tr><td class = "pad" align=right>SQRT1_2</td><td class = "pad">Square Root of 1/2</td></tr>' +
+          '<tr><td class = "pad" align=right>&</td><td class = "pad">Bitwise And</td></tr>' +
+          '<tr><td class = "pad" align=right>|</td><td class = "pad">Bitwise Or</td></tr>' +
+          '<tr><td class = "pad" align=right>^</td><td class = "pad">Bitwise XOR</td></tr>' +
+          '<tr><td class = "pad" align=right>~</td><td class = "pad">Bitwise Negation</td></tr>' +
+          '<tr><td class = "pad" align=right><<</td><td class = "pad">Bitwise Left Shift</td></tr>' +
+          '<tr><td class = "pad" align=right>>></td><td class = "pad">Bitwise Right Shift</td></tr>' +
+          '<tr><td class = "pad" align=right>%</td><td class = "pad">Modular Division</td></tr>' +
+          '<tr><td class = "pad" align=right>,</td><td class = "pad">Common For Functions</td></tr>' +
+          '<tr><td class = "pad" align=right>EE</td><td class = "pad">Scientific Notation Exponent</td></tr>' +
+          '<tr><td class = "pad" align=right>C</td><td class = "pad">Clear</td></tr>' +
+        '</table>' +
+      '</div>' +
+      '<div class = "docInner2">' +
 
-      '<center><h3 style = "color: #aa2222;"><a name="functions"></a>Math Functions</h3></center>' +
+        '<center><h3 style = "color: #aa2222;"><a name="functions"></a>Math Functions</h3></center>' +
 
-      '<table border=0 class="tables">' +
-        '<tr><td class = "pad" align=right>abs(x)</td><td class = "pad">The Absolute Value of x</td></tr>' +
-        '<tr><td class = "pad" align=right>acos(x)</td><td class = "pad">Arc Cosine of x</td></tr>' +
-        '<tr><td class = "pad" align=right>asin(x)</td><td class = "pad">Arc Sine of x</td></tr>' +
-        '<tr><td class = "pad" align=right>atan(x)</td><td class = "pad">Arc Tangent of x</td></tr>' +
-        '<tr><td class = "pad" align=right>atan2(x,y)</td><td class = "pad">Arc Tangent of x/y</td></tr>' +
-        '<tr><td class = "pad" align=right>ceil(x)</td><td class = "pad">Integer Closest to x and Not Less Than x</td></tr>' +
-        '<tr><td class = "pad" align=right>cos(x)</td><td class = "pad">Cosine of x</td></tr>' +
-        '<tr><td class = "pad" align=right>exp(x)</td><td class = "pad">Exponent of x</td></tr>' +
-        '<tr><td class = "pad" align=right>floor(x)</td><td class = "pad">Integer Closest to x and Not Greater Than x</td></tr>' +
-        '<tr><td class = "pad" align=right>log(x)</td><td class = "pad">Log of x Base e</td></tr>' +
-        '<tr><td class = "pad" align=right>max(x,y)</td><td class = "pad">The Maximum of x and y</td></tr>' +
-        '<tr><td class = "pad" align=right>min(x,y)</td><td class = "pad">The Minimum of x and y</td></tr>' +
-        '<tr><td class = "pad" align=right>pow(x,y)</td><td class = "pad">x to the Power of y</td></tr>' +
-        '<tr><td class = "pad" align=right>random()</td><td class = "pad">Pseudorandom Number in the Range 0 to 1</td></tr>' +
-        '<tr><td class = "pad" align=right>round(x)</td><td class = "pad">Integer Closest to x </td></tr>' +
-        '<tr><td class = "pad" align=right>sin(x)</td><td class = "pad">Sine of x</td></tr>' +
-        '<tr><td class = "pad" align=right>sqrt(x)</td><td class = "pad">Square Root of x</td></tr>' +
-        '<tr><td class = "pad" align=right>tan(x)</td><td class = "pad">Tangent of x</td></tr>' +
-      '</table>' +
-    '</div>' +
-    '<center><button onclick="hideInstructions()">Hide Instructions</button></center>' +
-    '<div style = "height: 2px; background-color: #aa2222; width: 25cm;margin: 10px auto 10px auto;"></div>');
+        '<table border=0 class="tables">' +
+          '<tr><td class = "pad" align=right>abs(x)</td><td class = "pad">The Absolute Value of x</td></tr>' +
+          '<tr><td class = "pad" align=right>acos(x)</td><td class = "pad">Arc Cosine of x</td></tr>' +
+          '<tr><td class = "pad" align=right>asin(x)</td><td class = "pad">Arc Sine of x</td></tr>' +
+          '<tr><td class = "pad" align=right>atan(x)</td><td class = "pad">Arc Tangent of x</td></tr>' +
+          '<tr><td class = "pad" align=right>atan2(x,y)</td><td class = "pad">Arc Tangent of x/y</td></tr>' +
+          '<tr><td class = "pad" align=right>ceil(x)</td><td class = "pad">Integer Closest to x and Not Less Than x</td></tr>' +
+          '<tr><td class = "pad" align=right>cos(x)</td><td class = "pad">Cosine of x</td></tr>' +
+          '<tr><td class = "pad" align=right>exp(x)</td><td class = "pad">Exponent of x</td></tr>' +
+          '<tr><td class = "pad" align=right>floor(x)</td><td class = "pad">Integer Closest to x and Not Greater Than x</td></tr>' +
+          '<tr><td class = "pad" align=right>log(x)</td><td class = "pad">Log of x Base e</td></tr>' +
+          '<tr><td class = "pad" align=right>max(x,y)</td><td class = "pad">The Maximum of x and y</td></tr>' +
+          '<tr><td class = "pad" align=right>min(x,y)</td><td class = "pad">The Minimum of x and y</td></tr>' +
+          '<tr><td class = "pad" align=right>pow(x,y)</td><td class = "pad">x to the Power of y</td></tr>' +
+          '<tr><td class = "pad" align=right>random()</td><td class = "pad">Pseudorandom Number in the Range 0 to 1</td></tr>' +
+          '<tr><td class = "pad" align=right>round(x)</td><td class = "pad">Integer Closest to x </td></tr>' +
+          '<tr><td class = "pad" align=right>sin(x)</td><td class = "pad">Sine of x</td></tr>' +
+          '<tr><td class = "pad" align=right>sqrt(x)</td><td class = "pad">Square Root of x</td></tr>' +
+          '<tr><td class = "pad" align=right>tan(x)</td><td class = "pad">Tangent of x</td></tr>' +
+        '</table>' +
+      '</div></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>' +
+      '</br>' +
+      '<center><button onclick="hideInstructions()">Hide Instructions</button></center>'+ 
+      '<div class = "info" style = "width:900px;">' +
+        '<b>Converting Numbers:</b> You can convert any form of a number (Decimal, Binary, Hexidecimal) to any other form (Decimal, Binary, Hexidecimal).</br></br>' +
+        '<u>Follow these few steps:</u>' +
+        '<ol>' +
+          '<li>Type in the number you want to convert (Decimal, Binary, Hexidecimal).' +
+            '<ul>' +
+              '<li>For <b>Binary:</b> Put a <b>"0b"</b> in front of the binary number you want to enter.' +
+                '<ul><li>Ex. (0b101010101, -0b0101)</li></ul>' +
+              '</li>' +
+              '<li>For <b>Hexidecimal:</b> Put a <b>"0x"</b> in front of the hexidecimal number you want to enter.' + 
+                '<ul><li>Ex. (0x64ab5fe9, -0x0846fcc3d)</li></ul>' +
+              '</li>' +
+              '<li>For <b>Decimal</b> (Mixed/Engineering/Scientific): Enter any number of any length.' +
+                '<ul><li>Ex. 658364, -2837465</li></ul>' +
+              '</li>' +
+            '</ul>' +
+          '</li>' +
+          '<li>Select the form you want to convert the number to by using the drop down box closest to the top.</li>' +
+          '<li>Press enter/return or the <b>"="</b> button on the calculator! The converted number should be displayed!</li>' +
+          '<li>Extras: After you convert once, you can quickly convert the same number without having to press enter/return or the "=" button by selecting another form in the drop down box.</li>' +
+        '</ol>' +
+        '</br>' +
+        '<b>Bitwise Operations and Bit Shifting: Examples of how to type into calculator. You can mix any form of the numbers!</b></br>' +
+        '<ul>' +
+          '<li>AND (&): 78 & 447, 0b101 & 0b100, 0x09ad & 0x97ea, 98 & 0b10, 0b101 & 0x28ac.</li>' +
+          '<li>OR (|): 78 | 447, 0b101 | 0b100, 0x09ad | 0x97ea, 98 | 0b10, 0b101 | 0x28ac.</li>' +
+          '<li>NOT (~): 78 ~ 447, 0b101 ~ 0b100, 0x09ad ~ 0x97ea, 98 ~ 0b10, 0b101 ~ 0x28ac.</li>' +
+          '<li>XOR (^): 78 ^ 447, 0b101 ^ 0b100, 0x09ad ^ 0x97ea, 98 ^ 0b10, 0b101 ^ 0x28ac.</li>' +
+          '<li>Bitwise Leftshift (<<): 78 << 1, 0b101 << 0b1, 0x09ad << 0xe, 98 << 0b10, 0b101 << 0xa.</li>' +
+          '<li>Bitwise Rightshift (>>): 78 >> 1, 0b101 >> 0b1, 0x09ad >> 0xe, 98 >> 0b10, 0b101 >> 0xa.</li>' +
+        '</ul>' +
+      '</div>' +
+      '<center><button onclick="hideInstructions()">Hide Instructions</button></center>' +
+      '<div style = "height: 2px; background-color: #aa2222; width: 25cm;margin: 10px auto 10px auto;"></div>');
 }
 
 function hideInstructions() {
